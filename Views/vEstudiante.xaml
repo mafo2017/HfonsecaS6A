@@ -9,18 +9,53 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <ListView x:Name="lvEstudiantes">
+        <!-- Cabecera de la tabla -->
+        <Label Text="Lista Estudiantes" 
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" 
+               Margin="10"/>
+        
+        <ListView x:Name="lvEstudiantes"
+                  Margin="10">
+            
+            <!-- Cabecera del ListView -->
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal" 
+                             Padding="10" 
+                             BackgroundColor="LightGray">
+                    <Label Text="Código" 
+                           HorizontalOptions="StartAndExpand" 
+                           FontAttributes="Bold"/>
+                    <Label Text="Nombre" 
+                           HorizontalOptions="StartAndExpand" 
+                           FontAttributes="Bold"/>
+                    <Label Text="Apellido" 
+                           HorizontalOptions="StartAndExpand" 
+                           FontAttributes="Bold"/>
+                    <Label Text="Edad" 
+                           HorizontalOptions="StartAndExpand" 
+                           FontAttributes="Bold"/>
+                </StackLayout>
+            </ListView.Header>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Label x:Name="lblNombre"
-                                   Text="{Binding nombre}"
+                        <StackLayout Orientation="Horizontal" 
+                                     Padding="10" 
+                                     Spacing="10">
+                            <Label Text="{Binding codigo}" 
+                                   HorizontalOptions="StartAndExpand"
                             />
-                            <Label x:Name="lblApellido"
-                                   Text="{Binding apellido}"
-                             />
-                            
+                            <Label Text="{Binding nombre}" 
+                                   HorizontalOptions="StartAndExpand"
+                            />
+                            <Label Text="{Binding apellido}" 
+                                   HorizontalOptions="StartAndExpand"
+                            />
+                            <Label Text="{Binding edad}" 
+                                   HorizontalOptions="StartAndExpand"
+                            />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
